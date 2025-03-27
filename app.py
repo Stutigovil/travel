@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_folium import folium_static
 import requests
 import google.generativeai as genai
 import os
