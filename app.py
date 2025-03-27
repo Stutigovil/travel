@@ -9,7 +9,7 @@ genai.configure(api_key=api_key)
 
 def get_itinerary(destination, days, interests, budget,walking,health,season,wildlife,travel_guide,dine_in,public_travel,recommendation,age):
     prompt = f"""
-    Create a {days}-day travel itinerary for {destination} based on these preferences and depict it in a form of flow chart which has to returned in an image format with small pictures of the places suggested daywise in readable manner:
+    Create a {days}-day travel itinerary for {destination} based on these preferences 
     walking distance should be according to preference {walking}
     it should also be based on season :{season} of travel
     Interests: {interests}
