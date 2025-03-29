@@ -47,7 +47,7 @@ if(budget=="moderate"):
 elif(budget=="luxury"):
     budget=17000
 else: 
-    budget=int(bud)
+    budget=int(budget)
 
 walking=st.selectbox("Do you have problem in walking?",["Yes","No"])
 health=st.text_input("Do you have any health issues?")
