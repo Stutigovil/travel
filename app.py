@@ -46,8 +46,14 @@ if(budgets=="moderate"):
     budget = 10000
 elif(budgets=="luxury"):
     budget=17000
+elif(budgets=="cheap"):
+    budget=1500
 else: 
-    budget=int(budgets)
+    try:
+    budget = int(budgets)
+    except ValueError:
+    st.error("Invalid budget! Please enter a number or type 'cheap'/ 'moderate' / 'luxury'.")
+
 
 walking=st.selectbox("Do you have problem in walking?",["Yes","No"])
 health=st.text_input("Do you have any health issues?")
