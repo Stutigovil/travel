@@ -41,13 +41,13 @@ st.write("Plan your trip effortlessly!")
 destination = st.text_input("Enter Destination (City, Country)")
 days = st.slider("Number of Days", 1, 20, 3)
 
-budget = st.text_input("Budget")
-if(budget=="moderate"):
+budgets = st.text_input("Budget")
+if(budgets=="moderate"):
     budget = 10000
-elif(budget=="luxury"):
+elif(budgets=="luxury"):
     budget=17000
 else: 
-    budget=int(budget)
+    budget=int(budgets)
 
 walking=st.selectbox("Do you have problem in walking?",["Yes","No"])
 health=st.text_input("Do you have any health issues?")
