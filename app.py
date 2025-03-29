@@ -26,6 +26,7 @@ def get_itinerary(destination, days, interests, budget,walking,health,season,wil
     - Morning, afternoon, and evening activities.
     - Dining recommendations.
     - Local attractions and famous places of the town irrespective of interests.
+    Sum of all of this travel will be strictly under the budget range
     """
     
     model = genai.GenerativeModel("gemini-1.5-pro")
@@ -40,13 +41,13 @@ st.write("Plan your trip effortlessly!")
 destination = st.text_input("Enter Destination (City, Country)")
 days = st.slider("Number of Days", 1, 20, 3)
 
-budget = st.text_input("Budget")
-if(budget=="moderate"):
+bud = st.text_input("Budget")
+if(bud=="moderate"):
     budget = 10000
-elif(budget=="luxury"):
+elif(bud=="luxury"):
     budget=17000
 else: 
-    budget=4000
+    budget=int(bud)
 
 walking=st.selectbox("Do you have problem in walking?",["Yes","No"])
 health=st.text_input("Do you have any health issues?")
@@ -57,7 +58,7 @@ travel_guide=st.selectbox("Travel guide preference",["Yes","No"])
 dine_in=st.text_input("Dine in preference")
 recommendation=st.selectbox("Do you need Hotel Recommendation",["Yes","No"])
 age=st.number_input("Enter your age",min_value=1,step=1)
-option=["Adventure and Outdoor Activities","Recreational Activities","Fun & Entertainment","Historical and cultural Exploration","Shopping","Nature & Relaxation","Sightseeing","Photography","Space & Science"]
+option=["Adventure and Outdoor Activities","Spiritual","Recreational Activities","Fun & Entertainment","Historical and cultural Exploration","Shopping","Nature & Relaxation","Sightseeing","Photography","Space & Science"]
 interests = st.multiselect("Your Interests",option)
 
 
