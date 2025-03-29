@@ -50,9 +50,9 @@ elif(budgets=="cheap"):
     budget=1500
 else: 
     try:
-    budget = int(budgets)
+        budget = int(budgets)
     except ValueError:
-    st.error("Invalid budget! Please enter a number or type 'cheap'/ 'moderate' / 'luxury'.")
+        st.error("Invalid budget! Please enter a number or type 'cheap'/ 'moderate' / 'luxury'.")
 
 
 walking=st.selectbox("Do you have problem in walking?",["Yes","No"])
