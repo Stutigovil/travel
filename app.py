@@ -41,18 +41,28 @@ st.write("Plan your trip effortlessly!")
 destination = st.text_input("Enter Destination (City, Country)")
 days = st.slider("Number of Days", 1, 20, 3)
 
+# Get budget input from the user
 budgets = st.text_input("Budget")
-if budgets.lower() == "moderate":
-    budget = 10000
-elif budgets.lower() == "luxury":
-    budget = 17000
-elif budgets.lower() == "cheap":
-    budget = 2500
+
+
+if budgets:
+    budgets = budgets.strip().lower()
+    
+    if budgets == "moderate":
+        budget = 10000
+    elif budgets == "luxury":
+        budget = 17000
+    elif budgets == "cheap":
+        budget = 2500
+    else:
+        try:
+            budget = int(budgets)
+        except ValueError:
+            st.write("Invalid budget! Please enter a number or type 'cheap' / 'moderate' / 'luxury'.")
+            budget = None
 else:
-    try:
-        budget = int(budgets)
-    except ValueError:
-        st.write("Invalid budget! Please enter a number or type 'cheap'/ 'moderate' / 'luxury'.")
+    budget = None  
+
 
 
 walking=st.selectbox("Do you have problem in walking?",["Yes","No"])
