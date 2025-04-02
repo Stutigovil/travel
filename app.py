@@ -42,13 +42,13 @@ destination = st.text_input("Enter Destination (City, Country)")
 days = st.slider("Number of Days", 1, 20, 3)
 
 budgets = st.text_input("Budget")
-budget
-if(budgets=="moderate"):
+budget=1000
+if(budgets=="moderate"or "Moderate"  or "MODERATE"):
     budget = 10000
-elif(budgets=="luxury"):
+elif(budgets=="luxury" or "Luxury" or "LUXURY"):
     budget=17000
 elif(budgets=="cheap"):
-    budget=1500
+    budget=2500
 else: 
     try:
         budget = int(budgets)
